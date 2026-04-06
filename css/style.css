@@ -102,15 +102,13 @@ a:hover {
 }
 
 .nav-logo a {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    height: 50px;
-    width: auto;
-    max-width: 200px;
-    object-fit: contain;
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-menu {
@@ -260,6 +258,16 @@ a:hover {
     font-weight: 700;
     color: var(--accent-color);
     z-index: 1;
+}
+
+.hero-logo {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
 }
 
 /* Buttons */

@@ -631,6 +631,72 @@ section::before {
     box-shadow: var(--shadow);
 }
 
+/* About Page Sections */
+.problem-content, .opportunity-content {
+    margin-top: 2rem;
+}
+
+.problem-content h3, .opportunity-content h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.problem-content ul, .opportunity-content ul {
+    list-style-position: inside;
+    margin-left: 1.5rem;
+    text-align: left;
+}
+
+.problem-content li, .opportunity-content li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-dark);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
 /* Team */
 .team-card {
     background-color: white;

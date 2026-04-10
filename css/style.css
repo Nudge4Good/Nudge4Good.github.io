@@ -795,6 +795,29 @@ footer::before {
     color: var(--neutral);
 }
 
+/* Logos Section */
+.logos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-menu {

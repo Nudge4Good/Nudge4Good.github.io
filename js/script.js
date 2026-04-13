@@ -28,23 +28,19 @@ navMenu.addEventListener('click', (e) => {
     }
 });
 
-// Visitor hit counter using CountAPI
+// Visitor hit counter using visitor-badge.laobi.icu
 function updateVisitorCount() {
     const counter = document.getElementById('visitor-count');
     if (!counter) return;
 
-    const namespace = 'nudge4good-visitor-counter';
-    const key = 'site-footer-hits';
-    const url = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+    const url = 'https://visitor-badge.laobi.icu/badge?page_id=Nudge4Good.Nudge4Good.github.io';
 
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data && typeof data.value === 'number') {
-                counter.textContent = data.value.toLocaleString();
-            } else {
-                counter.textContent = 'N/A';
-            }
+        .then(response => response.text())
+        .then(svg => {
+            const matches = [...svg.matchAll(/<text[^>]*>([^<]+)<\/text>/g)].map(m => m[1]);
+            const number = matches.reverse().find(value => /^\d+$/.test(value));
+            counter.textContent = number ? number.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : 'N/A';
         })
         .catch(() => {
             counter.textContent = 'N/A';

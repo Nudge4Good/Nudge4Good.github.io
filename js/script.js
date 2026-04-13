@@ -28,6 +28,31 @@ navMenu.addEventListener('click', (e) => {
     }
 });
 
+// Visitor hit counter using CountAPI
+function updateVisitorCount() {
+    const counter = document.getElementById('visitor-count');
+    if (!counter) return;
+
+    const namespace = 'nudge4good-visitor-counter';
+    const key = 'site-footer-hits';
+    const url = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data && typeof data.value === 'number') {
+                counter.textContent = data.value.toLocaleString();
+            } else {
+                counter.textContent = 'N/A';
+            }
+        })
+        .catch(() => {
+            counter.textContent = 'N/A';
+        });
+}
+
+updateVisitorCount();
+
 // Add scroll-based animations
 const observerOptions = {
     threshold: 0.1,

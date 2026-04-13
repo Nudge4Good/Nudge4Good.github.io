@@ -379,6 +379,10 @@ section::before {
     gap: 2.5rem;
 }
 
+.team .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 /* Cards */
 .card, .feature-card, .benefit-card, .collab-card, .benefit-item, .case-card, .team-card, .contact-item, .point {
     background: var(--glass-bg);
